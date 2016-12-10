@@ -6,7 +6,7 @@ public class StateManager : MonoBehaviour {
 	public delegate void StateChangeEvent();
 	public event StateChangeEvent Loading, Pregame, Running, Paused, Endgame, Quitting, StateChange;
 
-	private int current_state = STATE_NULL;
+	private int current_state = NULL;
 	private float state_start_time;
 
 	public const int NULL = -3;
@@ -36,32 +36,32 @@ public class StateManager : MonoBehaviour {
 		switch(current_state) {
 		case LOADING:
 			Common.debug("LOADING");
-			if (Loading) Loading();
+			if (Loading != null) Loading();
 			break;
 		case PREGAME:
 			Common.debug("PREGAME");
-			if (Pregame) Pregame();
+			if (Pregame != null) Pregame();
 			break;
 		case RUNNING:
 			Common.debug("RUNNING");
-			if (Running) Running();
+			if (Running != null) Running();
 			break;
 		case PAUSED:
 			Common.debug("PAUSED");
-			if (Paused) Paused();
+			if (Paused != null) Paused();
 			break;
 		case ENDGAME:
 			Common.debug("ENDGAME");
-			if (Endgame) Endgame();
+			if (Endgame != null) Endgame();
 			break;
 		case QUITTING:
 			Common.debug("QUITTING");
-			if (Quitting) Quitting();
+			if (Quitting != null) Quitting();
 			break;
 		}
 
 		// now fire the generic state_changed event
-		if (StateChange) StateChange();
+		if (StateChange != null) StateChange();
 	}
 
 

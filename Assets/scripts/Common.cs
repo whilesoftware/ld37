@@ -2,14 +2,14 @@
 using System.Collections;
 
 public class Common {
-	static StateManager state;
+	public static StateManager state;
 
-	//static CameraController camera_controller;
-	//static GameManager game_manager;
-	static TimeManager time;
+    //static CameraController camera_controller;
+    public static Game game;
+	public static TimeManager time;
 
 	//static DebugService debug;
-	void debug(string message) {
-		Log.debug(message);
+	public static void debug(string message) {
+		Debug.Log(message);
 	}
 }
