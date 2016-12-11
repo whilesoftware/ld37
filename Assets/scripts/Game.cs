@@ -25,7 +25,7 @@ public class Game : MonoBehaviour {
     void FirstUpdate() {
         // let's subscribe to all the big game state notifications
         Common.state.StateChange += handleStateChange;
-        for(int n=0; n < 30; n++) {
+        for(int n=0; n < grass_count; n++) {
             float x = grass_startx + grass_delta * n + Random.Range(-grass_rangex, grass_rangex);
             float y = grass_starty + Random.Range(-grass_rangey, grass_rangey);
 
