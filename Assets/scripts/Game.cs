@@ -7,6 +7,14 @@ public class Game : MonoBehaviour {
     public Character big;
     public Character little;
 
+    public Transform grass_prefab;
+    public float grass_delta;
+    public float grass_count;
+    public float grass_rangex;
+    public float grass_startx;
+    public float grass_starty;
+    public float grass_rangey;
+
     private bool first_update = true;
 
 	// Use this for initialization
@@ -17,6 +25,14 @@ public class Game : MonoBehaviour {
     void FirstUpdate() {
         // let's subscribe to all the big game state notifications
         Common.state.StateChange += handleStateChange;
+        for(int n=0; n < 30; n++) {
+            float x = grass_startx + grass_delta * n + Random.Range(-grass_rangex, grass_rangex);
+            float y = grass_starty + Random.Range(-grass_rangey, grass_rangey);
+
+            Transform newgrass = (Transform) Instantiate(grass_prefab, new Vector3(x, y, 0), Quaternion.identity);
+            Animator anim = newgrass.GetComponent<Animator>();
+            anim.Play("grass", -1, Random.Range(0f, 1f));
+        }
     }
 
     private void handleStateChange() {
