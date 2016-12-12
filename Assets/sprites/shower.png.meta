@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5fceba2e1ed6abf439e62d2dfd35d36c
-timeCreated: 1481432269
+guid: 884a1e139c94bb647b57d532d97ad0e5
+timeCreated: 1481494115
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,7 +8,6 @@ TextureImporter:
     21300002: shower_1
     21300004: shower_2
     21300006: shower_3
-    21300008: shower_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -101,19 +100,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 450
-        y: 212
-        width: 150
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: shower_4
-      rect:
-        serializedVersion: 2
-        x: 600
         y: 212
         width: 150
         height: 300

@@ -15,6 +15,13 @@ public class Game : MonoBehaviour {
     public float grass_starty;
     public float grass_rangey;
 
+    public float grass2_delta;
+    public float grass2_count;
+    public float grass2_rangex;
+    public float grass2_startx;
+    public float grass2_starty;
+    public float grass2_rangey;
+
     private bool first_update = true;
 
 	// Use this for initialization
@@ -33,6 +40,15 @@ public class Game : MonoBehaviour {
             Animator anim = newgrass.GetComponent<Animator>();
             anim.Play("grass", -1, Random.Range(0f, 1f));
         }
+
+        for (int n = 0; n < grass2_count; n++) {
+            float x = grass2_startx + grass2_delta * n + Random.Range(-grass2_rangex, grass2_rangex);
+            float y = grass2_starty + Random.Range(-grass2_rangey, grass2_rangey);
+
+            Transform newgrass = (Transform)Instantiate(grass_prefab, new Vector3(x, y, 0), Quaternion.identity);
+            Animator anim = newgrass.GetComponent<Animator>();
+            anim.Play("grass", -1, Random.Range(0f, 1f));
+        }
     }
 
     private void handleStateChange() {
@@ -47,7 +63,7 @@ public class Game : MonoBehaviour {
                 break;
             case StateManager.RUNNING:
                 // hide the logo
-                game_logo.gameObject.SetActive(false);
+                //game_logo.gameObject.SetActive(false);
                 break;
             case StateManager.PAUSED:
                 break;
