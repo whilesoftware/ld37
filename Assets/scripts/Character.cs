@@ -101,7 +101,7 @@ public class Character : MonoBehaviour {
             }
         }
 
-        if (r2d.velocity.x >= 0) {
+        if (r2d.velocity.x > 0) {
             point_left(false);
         } else if (r2d.velocity.x < 0) {
             point_left(true);

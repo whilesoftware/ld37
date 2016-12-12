@@ -5,7 +5,7 @@ public class Game : MonoBehaviour {
 
     public Transform game_logo;
     public Character big;
-    public Character little;
+    public Little little;
 
     public Transform grass_prefab;
     public float grass_delta;
