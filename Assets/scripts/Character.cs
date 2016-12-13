@@ -19,7 +19,10 @@ public class Character : MonoBehaviour {
 
     public Transform left_pupil;
     public Transform right_pupil;
+    public Transform eyes_centered;
     public Transform mouth_centered;
+    public Transform left_foot_stationary;
+    public Transform right_foot_stationary;
 
     public Transform moving_specific;
     public Transform stationary_specific;
@@ -34,6 +37,13 @@ public class Character : MonoBehaviour {
     private SpriteRenderer sr_left_foot_moving_outline;
     private SpriteRenderer sr_right_foot_moving_background;
     private SpriteRenderer sr_right_foot_moving_outline;
+
+    private SpriteRenderer sr_left_pupil;
+    private SpriteRenderer sr_right_pupil;
+    private SpriteRenderer sr_eyes;
+    private SpriteRenderer sr_mouth_centered;
+    private SpriteRenderer sr_left_foot_stationary;
+    private SpriteRenderer sr_right_foot_stationary;
 
     private Rigidbody2D r2d;
     private bool first_update = true;
@@ -58,6 +68,13 @@ public class Character : MonoBehaviour {
         sr_left_foot_moving_outline.flipX = newval;
         sr_right_foot_moving_background.flipX = newval;
         sr_right_foot_moving_outline.flipX = newval;
+
+        sr_left_pupil.flipX = newval;
+        sr_right_pupil.flipX = newval;
+        sr_eyes.flipX = newval;
+        sr_mouth_centered.flipX = newval;
+        sr_left_foot_stationary.flipX = newval;
+        sr_right_foot_stationary.flipX = newval;
     }
 
     private void FirstUpdate() {
@@ -71,6 +88,13 @@ public class Character : MonoBehaviour {
         sr_left_foot_moving_outline = left_foot_moving_outline.GetComponent<SpriteRenderer>();
         sr_right_foot_moving_background = right_foot_moving_background.GetComponent<SpriteRenderer>();
         sr_right_foot_moving_outline = right_food_moving_outline.GetComponent<SpriteRenderer>();
+
+        sr_left_pupil = left_pupil.GetComponent<SpriteRenderer>();
+        sr_right_pupil = right_pupil.GetComponent<SpriteRenderer>();
+        sr_eyes = eyes_centered.GetComponent<SpriteRenderer>();
+        sr_mouth_centered = mouth_centered.GetComponent<SpriteRenderer>();
+        sr_left_foot_stationary = left_foot_stationary.GetComponent<SpriteRenderer>();
+        sr_right_foot_stationary = right_foot_stationary.GetComponent<SpriteRenderer>();
 
         point_left(false);
     }
