@@ -89,14 +89,12 @@ public class Little : MonoBehaviour {
 			FirstUpdate();
 		}
 
-
 		// if the Big is too far away, run after it
 		Vector3 big_pos = Common.game.big.transform.position;
 		if (Mathf.Abs(big_pos.x - transform.position.x) > chase_distance) {
 			move_target = big_pos;
 			has_move_target = true;
 		}
-
 
 		// if we have a target
 		if (has_move_target) {
