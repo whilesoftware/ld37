@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
+    public float max_velocity = 1;
+
     public Transform move_target = null;
     public Transform look_target = null;
 
@@ -112,9 +114,9 @@ public class Character : MonoBehaviour {
             Common.debug("distance: " + distance.ToString());
             if (distance > 0.2) {
                 if (move_target.position.x < transform.position.x) {
-                    r2d.velocity = new Vector2(-1, 0);
+                    r2d.velocity = new Vector2(-max_velocity, 0);
                 }else {
-                    r2d.velocity = new Vector2(1, 0);
+                    r2d.velocity = new Vector2(max_velocity, 0);
                 }
             }else {
                 // we just reached it!

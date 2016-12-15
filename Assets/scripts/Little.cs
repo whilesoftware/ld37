@@ -4,6 +4,7 @@ using System.Collections;
 public class Little : MonoBehaviour {
 
 	public float chase_distance = 2;
+    public float max_velocity = 1;
 	private bool has_move_target = false;
 	public Vector3 move_target;
 
@@ -103,9 +104,9 @@ public class Little : MonoBehaviour {
 			//Common.debug("distance: " + distance.ToString());
 			if (distance > 0.1) {
 				if (move_target.x < transform.position.x) {
-					r2d.velocity = new Vector2(-1, 0);
+					r2d.velocity = new Vector2(-max_velocity, 0);
 				}else {
-					r2d.velocity = new Vector2(1, 0);
+					r2d.velocity = new Vector2(max_velocity, 0);
 				}
 			}else {
 				// we just reached it!
